@@ -12,7 +12,6 @@ drfdocs==0.0.9
 facebook-sdk==1.0.0
 kombu==3.0.35
 Markdown==2.6.5
-MySQL-python==1.2.5
 python-dateutil==2.5.1
 pytz==2016.4
 PyYAML==3.11
