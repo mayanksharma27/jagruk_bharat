@@ -1,4 +1,8 @@
 from rest_framework.views import APIView
+from django.http import *
+from django.template import *
+from django.shortcuts import *
+import json
 from rest_framework import generics
 from rest_framework.request import Request
 from rest_framework.views import APIView
@@ -19,4 +23,24 @@ class userApiView(generics.ListCreateAPIView):
     def get_serializer_class(self):
         if self.request.method == 'POST':
             return UserWriteSerializer
-        return UserSerializer
+        if(UserSerializer.count==1):
+            return UserSerializer
+        else:
+            return 1
+
+def login(request):
+    if(request.method=='POST'):
+        Array = json.loads(request.body)
+        count=user.objects.filter(username=Array['username'],password=Array['password']).count()
+        if(count==1):
+            user1=user.objects.get(username=Array['username'],password=Array['password'])
+            request.session['username']=Array['username']
+            response = {}
+            response['status'] = 0
+            return HttpResponse(json.dumps(response))
+        else:
+            response={}
+            response['status']=1
+            return HttpResponse(json.dumps(response))
+    else:
+        return render(request,'myapp/login.html')
