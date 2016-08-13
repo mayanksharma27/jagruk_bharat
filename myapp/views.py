@@ -40,16 +40,3 @@ class dataApiView(generics.ListCreateAPIView):
     def get_serializer_class(self):
         return dataSerializer
 
-class projectApiView(generics.ListCreateAPIView):
-    queryset = projects.objects.all()
-    def get_serializer_class(self):
-        return projectSerializer
-
-
-            return HttpResponse(json.dumps(response))
-        else:
-            response={}
-            response['status']=1
-            return HttpResponse(json.dumps(response))
-    else:
-        return render(request,'myapp/login.html')
