@@ -20,6 +20,20 @@ class userApiView(generics.ListCreateAPIView):
     def get_serializer_class(self):
         if self.request.method == 'POST':
             return UserWriteSerializer
+<<<<<<< HEAD
+        return UserSerializer
+
+class dataApiView(generics.ListCreateAPIView):
+    queryset = data.objects.all()
+    def get_serializer_class(self):
+        return dataSerializer
+
+class projectApiView(generics.ListCreateAPIView):
+    queryset = projects.objects.all()
+    def get_serializer_class(self):
+        return projectSerializer
+
+=======
         if(UserSerializer.count==1):
             return UserSerializer
         else:
@@ -34,18 +48,6 @@ def login(request):
             request.session['username']=Array['username']
             response = {}
             response['status'] = 0
-
-class dataApiView(generics.ListCreateAPIView):
-    queryset = data.objects.all()
-    def get_serializer_class(self):
-        return dataSerializer
-
-class projectApiView(generics.ListCreateAPIView):
-    queryset = projects.objects.all()
-    def get_serializer_class(self):
-        return projectSerializer
-
-
             return HttpResponse(json.dumps(response))
         else:
             response={}
@@ -53,3 +55,4 @@ class projectApiView(generics.ListCreateAPIView):
             return HttpResponse(json.dumps(response))
     else:
         return render(request,'myapp/login.html')
+>>>>>>> d403a105849116c900ccd3269d2418bc0d383f04
