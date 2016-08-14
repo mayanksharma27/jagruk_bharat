@@ -63,3 +63,10 @@ class projectApiView(generics.ListCreateAPIView):
 
 def indexApiView(request):
     return render(request, 'myapp/index.html')
+
+
+def dataEntryApiView(request):
+    return render(request, 'myapp/data.html')
+
+def registerApiView(request):
+    return render(request, 'myapp/register.html')

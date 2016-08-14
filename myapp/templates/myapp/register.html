@@ -1,5 +1,8 @@
 <!DOCTYPE htm>
-<html lang="en" ng-app="myapp">
+
+{% load staticfiles %}
+
+<html lang="en" >
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
@@ -9,18 +12,23 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="../../static/myapp/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="../../static/myapp/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.1.9/angular-materialize.min.js"></script>
-
+    
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.1.9/angular-materialize.min.js"></script>
+    <script type="text/javascript" src="../../static/myapp/signUpCtrl.js"></script>
+   
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
 </head>
-<body>
+<body  ng-app="mainApp" ng-controller="signUpCtrl">
 <header>
 	 <nav>
     <div class="nav-wrapper green ">
       <ul class="right hide-on-med-and-down">
-        <li><a href="index.html">home</a></li>
-        <li><a href="register.html">Register</a></li>
+        <li><a href="/">home</a></li>
+        <li><a href="/register">Register</a></li>
       </ul>
     </div>
   </nav>
@@ -40,32 +48,32 @@
            <div>&nbsp;</div>
         <div class="input-field col s8 offset-s2">
           <i class="material-icons prefix">account_circle</i>
-          <input id="icon_prefix" type="text" class="validate">
+          <input id="icon_prefix" type="text" ng-model="userName" class="validate">
           <label for="icon_prefix">UserName</label>
           </div>
         <div class="input-field col s8 offset-s2">
           <i class="material-icons prefix">lock</i>
-          <input id="Password" type="password" class="validate">
+          <input id="Password" type="password" ng-model="password" class="validate">
           <label for="Password">Password</label>
         </div>
         <div class="input-field col s8 offset-s2">
           <i class="material-icons prefix">lock</i>
-          <input id="Password" type="password" class="validate">
+          <input id="Password" type="password" ng-model="confpassword" class="validate">
           <label for="Password">Confirm Password</label>
         </div>
          <div>&nbsp;</div>
           <div>&nbsp;</div>
 
-    <div class="center">
+    
+    <div class="center col s8 offset-s2">
       <div>&nbsp;</div>
           <div>&nbsp;</div>
-  <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-    <i class="material-icons right">send</i>
-  </button>
-        
-  <button class="btn waves-effect waves-light" type="cancel" name="action">Cancel
-    
-  </button>
+  
+<a class="waves-effect waves-light btn" ng-click="onClickRegister()">save</a>
+<div>&nbsp;</div>
+          <div>&nbsp;</div>
+<div>&nbsp;</div>
+          <div>&nbsp;</div> 
         </div>
          <div>&nbsp;</div>
           <div>&nbsp;</div> 

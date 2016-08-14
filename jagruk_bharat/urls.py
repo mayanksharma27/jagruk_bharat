@@ -22,10 +22,11 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/signUp/',views.userApiView.as_view()),
     url(r'login/',views.login,name='Login '),
-    url(r'signUp/',views.login,name='signUp '),
     url(r'^api/data/',views.dataApiView.as_view()),
     url(r'^api/accountusers/(?P<state>[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12})/$',views.dataApiView.as_view()
         ),
     url(r'^api/project',views.projectApiView.as_view()),
     url(r'^$',views.indexApiView),
+    url(r'^dataEntry/',views.dataEntryApiView),
+    url(r'^register/', views.registerApiView),
 ]

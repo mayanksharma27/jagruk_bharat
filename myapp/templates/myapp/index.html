@@ -2,7 +2,7 @@
 
 {% load staticfiles %}
 
-<html lang="en" ng-app="myapp">
+<html lang="en" >
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
@@ -12,24 +12,23 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="../../static/myapp/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="../../static/myapp/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
+    
    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.1.9/angular-materialize.min.js"></script>
-
-
-    <script type="text/javascript" src="{% static 'myapp/loginCtrl.js' %}" />
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.1.9/angular-materialize.min.js"></script>
+    <script type="text/javascript" src="../../static/myapp/loginCtrl.js"></script>
+   
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
 </head>
-<body >
-<div ng-app="mainApp" ng-controller="loginCtrl">
+<body  ng-app="mainApp" ng-controller="loginCtrl">
 <header>
 	 <nav>
     <div class="nav-wrapper green ">
       <ul class="right hide-on-med-and-down">
-        <li><a href="index.html">Jagruk</a></li>
-        <li><a href="register.html">Register</a></li>
+        <li><a href="/">home</a></li>
+        <li><a href="/register">Register</a></li>
       </ul>
     </div>
   </nav>
@@ -64,32 +63,37 @@
          <div>&nbsp;</div>
           <div>&nbsp;</div>
 
-    <div class="center">
+    <div class="center col s8 offset-s2">
       <div>&nbsp;</div>
           <div>&nbsp;</div>
-  <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-    <i class="material-icons right">send</i>
-  </button>
-        
-  <button class="btn waves-effect waves-light" type="cancel" name="action">Cancel
-    
-  </button>
-        </div>
-         <div>&nbsp;</div>
+  
+<a class="waves-effect waves-light btn" ng-click="onClickLogin()">button</a>
+<div>&nbsp;</div>
+          <div>&nbsp;</div>
+<div>&nbsp;</div>
           <div>&nbsp;</div> 
+        </div>
+         
     </form>
 
+         
     </div>
     </div>
     </div>
 
-</main><footer class="page-footer center green">
+         <div>&nbsp;</div>
+          <div>&nbsp;</div>
+         <div>&nbsp;</div>
+          <div>&nbsp;</div>
+         <div>&nbsp;</div>
+          <div>&nbsp;</div>
+</main>
+<footer class="page-footer center green">
     
       <div class="footer-copyright">
       <div class="container center">Copyright © DigitEyes91 AdVentures Private Ltd., 2016. All Rights Reserved
       </div>
       </div>
       </footer>
-    </div>
 </body>
 </html>
