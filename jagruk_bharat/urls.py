@@ -23,7 +23,7 @@ urlpatterns = [
     url(r'^api/signUp/',views.userApiView.as_view()),
     url(r'login/',views.login,name='Login '),
     url(r'signUp/',views.login,name='signUp '),
-    url(r'data/',views.dataApiView.as_view()),
-    url(r'signUp/',views.projectApiView.as_view()),
-    url(r'',views.indexApiView),
+    url(r'^api/data/',views.dataApiView.as_view()),
+    url(r'^api/project',views.projectApiView.as_view()),
+    url(r'^$',views.indexApiView),
 ]
