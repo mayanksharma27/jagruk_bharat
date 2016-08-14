@@ -43,7 +43,15 @@ def login(request):
         return render(request,'myapp/login.html')
 
 class dataApiView(generics.ListCreateAPIView):
-    queryset = data.objects.all()
+    filter_backends = (filters.DjangoFilterBackend, filters.SearchFilter,)
+    search_fields = ('state')
+    def get_queryset(self):
+        queryset = data.objects.all()
+        state = self.request.query_params.get('state', None)
+        if state is not None:
+            queryset = queryset.filter(state=state)
+        return queryset
+
     def get_serializer_class(self):
         return dataSerializer
 
