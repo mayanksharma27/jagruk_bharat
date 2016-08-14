@@ -23,8 +23,8 @@ urlpatterns = [
     url(r'^api/signUp/',views.userApiView.as_view()),
     url(r'login/',views.login,name='Login '),
     url(r'^api/data/',views.dataApiView.as_view()),
-    url(r'^api/accountusers/(?P<state>[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12})/$',views.dataApiView.as_view()
-        ),
+    url(r'^api/accountusers/(?P<state>[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12})/$',views.dataApiView.as_view()),
+    url(r'^api/getData/',views.getData),
     url(r'^api/project',views.projectApiView.as_view()),
     url(r'^$',views.indexApiView),
     url(r'^dataEntry/',views.dataEntryApiView),

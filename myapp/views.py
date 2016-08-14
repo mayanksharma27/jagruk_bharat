@@ -2,6 +2,7 @@ from rest_framework.views import APIView
 from django.http import *
 from django.template import *
 from django.shortcuts import *
+from django.core import  *
 import json
 from rest_framework import generics
 from rest_framework.request import Request
@@ -11,6 +12,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.status import HTTP_201_CREATED, HTTP_400_BAD_REQUEST
 import django_filters
+from django.core.serializers import serialize
 from rest_framework import filters
 from .serializers import *
 from .models import *
@@ -54,6 +56,15 @@ class dataApiView(generics.ListCreateAPIView):
 
     def get_serializer_class(self):
         return dataSerializer
+
+
+def getData(request):
+    if(request.method=='POST'):
+        Datas=  data.objects.all().filter(state=request.POST.get('state'))
+        Data1 = serialize('json',Datas)
+        return HttpResponse(json.dumps(Data1))
+
+
 
 class projectApiView(generics.ListCreateAPIView):
     queryset=projects.objects.all()
