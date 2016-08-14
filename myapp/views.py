@@ -47,10 +47,5 @@ class dataApiView(generics.ListCreateAPIView):
     def get_serializer_class(self):
         return dataSerializer
 
-class projectApiView(generics.ListCreateAPIView):
-    queryset = projects.objects.all()
-    def get_serializer_class(self):
-        return projectSerializer
-
 def indexApiView(request):
     return render(request, 'myapp/index.html')
