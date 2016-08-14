@@ -34,6 +34,13 @@ def login(request):
             request.session['username']=Array['username']
             response = {}
             response['status'] = 0
+            return HttpResponse(json.dumps(response))
+        else:
+            response={}
+            response['status']=1
+            return HttpResponse(json.dumps(response))
+    else:
+        return render(request,'myapp/login.html')
 
 class dataApiView(generics.ListCreateAPIView):
     queryset = data.objects.all()
@@ -45,11 +52,5 @@ class projectApiView(generics.ListCreateAPIView):
     def get_serializer_class(self):
         return projectSerializer
 
-
-            return HttpResponse(json.dumps(response))
-        else:
-            response={}
-            response['status']=1
-            return HttpResponse(json.dumps(response))
-    else:
-        return render(request,'myapp/login.html')
+def indexApiView(request):
+    return render(request, 'myapp/index.html')

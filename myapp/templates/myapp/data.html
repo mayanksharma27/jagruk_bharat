@@ -19,7 +19,7 @@
 	 <nav>
     <div class="nav-wrapper green ">
       <ul class="right hide-on-med-and-down">
-        <li><a href="index.html">Jagruk</a></li>
+        <li><a href="index.html">home</a></li>
         <li><a href="register.html">Register</a></li>
       </ul>
     </div>
@@ -28,30 +28,67 @@
 <main class="grey lighten-3">
 <div class="col s12 m12 l12">
 <div class="row">&nbsp; &nbsp;</div>
-<div class="row center">
 
-  <h3 class="heading ">Welcome to Jagruk Bharat!</h3>
-  <h5> App that Awakens you!</h5>
-</div>
 
 
 <div class="row">&nbsp; &nbsp;</div>
 <div class="row">&nbsp; &nbsp;</div>
            <div class=" row col s12 m12 l12">
            <div class=" white col s6 m6 l6 offset-s3 offset-m3 offset-l3 z-depth-2">
-           <div class="row center"><h3>Login</h3></div>
+           <div class="row center"><h3>Enter Data</h3></div>
            <form>
            <div>&nbsp;</div>
         <div class="input-field col s8 offset-s2">
           <i class="material-icons prefix">account_circle</i>
           <input id="icon_prefix" type="text" class="validate">
-          <label for="icon_prefix">Username</label>
+          <label for="icon_prefix">Title</label>
           </div>
         <div class="input-field col s8 offset-s2">
           <i class="material-icons prefix">lock</i>
           <input id="Password" type="password" class="validate">
-          <label for="Password">Password</label>
+          <label for="Password">Area</label>
         </div>
+         <div class="input-field col s8 offset-s2">
+    <select>
+      <option value="" disabled selected>Choose your option</option>
+      <option value="Subsidy">subsidy</option>
+      <option value="schemes">schemes</option>
+      <option value="rights">rights</option>
+    </select>
+    <label>Type of Data</label>
+  </div>
+   <div class="input-field col s8 offset-s2">
+    <select>
+      <option value="" disabled selected>Choose your option</option>
+      <option value="Rural">Rural</option>
+      <option value="Urban">Urban</option>
+      <option value="Both">Both</option>
+    </select>
+    <label>Area affected</label>
+  </div>
+    <div class="input-field col s8 offset-s2">
+            <textarea id="textarea1" class="materialize-textarea" length="120"></textarea>
+            <label for="textarea1">Description</label>
+          </div>
+  <div class="input-field col s8 offset-s2">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="icon_prefix" type="text" class="validate">
+          <label for="icon_prefix">State</label>
+          </div>
+
+   <div class="input-field col s8 offset-s2">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="icon_prefix" type="text" class="validate">
+          <label for="icon_prefix">District</label>
+          </div>
+          <div class="input-field col s8 offset-s2">
+    <select>
+      <option value="" disabled selected>Choose your option</option>
+      <option value="farmers">Farmers</option>
+      <option value="all">all</option>
+    </select>
+    <label>TYpe of people affected</label>
+  </div>
          <div>&nbsp;</div>
           <div>&nbsp;</div>
 
@@ -83,3 +120,10 @@
       </footer>   
 </body>
 </html>
+
+
+    description = models.CharField(max_length=200)
+    
+    state = models.CharField(max_length=100)
+    district = models.CharField(max_length=100)
+    for_whom = models.CharField(max_length=100)
